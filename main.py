@@ -2,6 +2,7 @@ import discord
 import os
 import requests
 import errors
+import random
 
 
 client = discord.Client()
@@ -30,12 +31,16 @@ async def on_message(message):
     else:
       await message.channel.send(errors.NO_PERMISSION)
 
-  if message.content.startswith('?source'):
-    await message.channel.send(f'''Caituw is and always will be open source on github:thumbsup:
-    https://github.com/muzan-0/caituw
+  if message.content.startswith('?dead'):
+    await message.channel.send(random.choice(['ur ded lol', 'alive, but not for long\n(look behind u)']))
 
-    Hosted on repl.it
-    https://replit.com/@MicahEaton/caituw?v=1
+  if message.content.startswith('?source'):
+    await message.channel.send(f'''
+Caituw is and always will be open source on github:thumbsup:
+<https://github.com/muzan-0/caituw>
+
+Hosted on repl.it
+<https://replit.com/@MicahEaton/caituw?v=1>
     ''')
 
 client.run(os.getenv('TOKEN'))
