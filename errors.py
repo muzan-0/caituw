@@ -1,0 +1,1 @@
+NO_PERMISSION = "Hey stupid, you're not rich enough to use that \nimagine"
